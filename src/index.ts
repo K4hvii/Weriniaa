@@ -20,11 +20,6 @@ client.on("ready", () => {
   }
 
   commands?.create({
-    name: "Hilla",
-    description: "Kertoo Hillan Sukunimen",
-  });
-
-  commands?.create({
     name: "ping",
     description: "Replies with pong.",
   });

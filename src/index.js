@@ -77,10 +77,6 @@ client.on("ready", function () {
         commands = (_a = client.application) === null || _a === void 0 ? void 0 : _a.commands;
     }
     commands === null || commands === void 0 ? void 0 : commands.create({
-        name: "Hilla",
-        description: "Kertoo Hillan Sukunimen",
-    });
-    commands === null || commands === void 0 ? void 0 : commands.create({
         name: "ping",
         description: "Replies with pong.",
     });
