@@ -20,6 +20,11 @@ client.on("ready", () => {
   }
 
   commands?.create({
+    name: "Hilla",
+    description: "Kertoo Hillan Sukunimen",
+  });
+
+  commands?.create({
     name: "ping",
     description: "Replies with pong.",
   });
@@ -31,6 +36,13 @@ client.on("interactionCreate", async (interaction) => {
   }
 
   const { commandName, options } = interaction;
+
+  if (commandName === "Hilla") {
+    interaction.reply({
+      content: "Lamminen",
+      ephemeral: true,
+    });
+  }
 
   if (commandName === "ping") {
     interaction.reply({

@@ -77,6 +77,10 @@ client.on("ready", function () {
         commands = (_a = client.application) === null || _a === void 0 ? void 0 : _a.commands;
     }
     commands === null || commands === void 0 ? void 0 : commands.create({
+        name: "Hilla",
+        description: "Kertoo Hillan Sukunimen",
+    });
+    commands === null || commands === void 0 ? void 0 : commands.create({
         name: "ping",
         description: "Replies with pong.",
     });
@@ -88,6 +92,12 @@ client.on("interactionCreate", function (interaction) { return __awaiter(void 0,
             return [2 /*return*/];
         }
         commandName = interaction.commandName, options = interaction.options;
+        if (commandName === "Hilla") {
+            interaction.reply({
+                content: "Lamminen",
+                ephemeral: true,
+            });
+        }
         if (commandName === "ping") {
             interaction.reply({
                 content: "Pinging...  Your ping is " + client.ws.ping + "ms.",
