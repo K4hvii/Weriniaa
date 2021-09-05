@@ -98,11 +98,9 @@ client.on("interactionCreate", function (interaction) { return __awaiter(void 0,
                 ephemeral: true,
             });
         }
-        else
-            (commandName === "Hilla");
-        {
+        else if (commandName === "Hilla") {
             interaction.reply({
-                content: "lamminen",
+                content: "Lamminen",
                 ephemeral: true,
             });
         }
