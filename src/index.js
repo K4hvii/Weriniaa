@@ -92,15 +92,17 @@ client.on("interactionCreate", function (interaction) { return __awaiter(void 0,
             return [2 /*return*/];
         }
         commandName = interaction.commandName, options = interaction.options;
-        if (commandName === "Hilla") {
-            interaction.reply({
-                content: "Lamminen",
-                ephemeral: true,
-            });
-        }
         if (commandName === "ping") {
             interaction.reply({
                 content: "Pinging...  Your ping is " + client.ws.ping + "ms.",
+                ephemeral: true,
+            });
+        }
+        else
+            (commandName === "Hilla");
+        {
+            interaction.reply({
+                content: "lamminen",
                 ephemeral: true,
             });
         }
