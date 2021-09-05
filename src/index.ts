@@ -34,7 +34,7 @@ client.on("interactionCreate", async (interaction) => {
 
   if (commandName === "ping") {
     interaction.reply({
-      content: `Pinging... ${client.ws.ping}`,
+      content: `Pinging... ${client.ws.ping}ms.`,
       ephemeral: true,
     });
   }
