@@ -42,11 +42,6 @@ client.on("interactionCreate", async (interaction) => {
       content: `Pinging...  Your ping is ${client.ws.ping}ms.`,
       ephemeral: true,
     });
-  } else if (commandName === "Hilla") {
-    interaction.reply({
-      content: "Lamminen",
-      ephemeral: true,
-    });
   }
 });
 

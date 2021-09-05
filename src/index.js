@@ -98,12 +98,6 @@ client.on("interactionCreate", function (interaction) { return __awaiter(void 0,
                 ephemeral: true,
             });
         }
-        else if (commandName === "Hilla") {
-            interaction.reply({
-                content: "Lamminen",
-                ephemeral: true,
-            });
-        }
         return [2 /*return*/];
     });
 }); });
