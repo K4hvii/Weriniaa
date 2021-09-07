@@ -28,15 +28,53 @@ var wokcommands_1 = __importDefault(require("wokcommands"));
 var path_1 = __importDefault(require("path"));
 dotenv_1.default.config();
 var client = new discord_js_1.default.Client({
-    intents: [discord_js_1.Intents.FLAGS.GUILDS, discord_js_1.Intents.FLAGS.GUILD_MESSAGES],
+    intents: [
+        discord_js_1.Intents.FLAGS.GUILDS,
+        discord_js_1.Intents.FLAGS.GUILD_MESSAGES,
+        discord_js_1.Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+    ],
 });
 client.on("ready", function () {
     var _a;
     console.log(((_a = client.user) === null || _a === void 0 ? void 0 : _a.tag) + " is online!");
-    new wokcommands_1.default(client, {
+    var dbOptions = {
+        // These are the default values
+        keepAlive: true,
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: true,
+    };
+    var wok = new wokcommands_1.default(client, {
+        dbOptions: dbOptions,
         commandDir: path_1.default.join(__dirname, "commands"),
+        featureDir: path_1.default.join(__dirname, "features"),
         testServers: ["878243494802632724"],
-    }).setDefaultPrefix(".");
+    })
+        .setBotOwner("453946836051558420")
+        .setDefaultPrefix(".")
+        .setMongoPath(process.env.MONGO_URI)
+        .setDisplayName("WeriniaWare")
+        .setCategorySettings([
+        {
+            name: "Fun",
+            emoji: "",
+        },
+        {
+            name: "Economy",
+            emoji: "💸",
+        },
+        {
+            name: "Configuration",
+            emoji: "🚧",
+            hidden: true,
+        },
+        {
+            name: "Game",
+            emoji: "🎮",
+        },
+    ]);
+    var commandHandler = wok.commandHandler;
+    var slashCommands = wok.slashCommands;
 });
 if (process.env.TOKEN)
     client.login(process.env.TOKEN);
