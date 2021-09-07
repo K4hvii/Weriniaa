@@ -20,7 +20,8 @@
     "fs": "^0.0.1-security",
     "mongoose": "^6.0.4",
     "node": "16.6.1",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "wokcommands": "github:AlexzanderFlores/WOKCommands#dev"
   },
   "devDependencies": {
     "typescript": "^4.4.2"

@@ -1,5 +1,7 @@
 import DiscordJS, { Intents } from "discord.js";
 import dotenv from "dotenv";
+import WOKCommands from "wokcommands";
+import path from "path";
 dotenv.config();
 
 const client = new DiscordJS.Client({
@@ -7,37 +9,12 @@ const client = new DiscordJS.Client({
 });
 
 client.on("ready", () => {
-  console.log("bot is ready!");
+  console.log(`${client.user?.tag} is online!`);
 
-  const guildId = "878243494802632724";
-  const guild = client.guilds.cache.get(guildId);
-  let commands;
-
-  if (guild) {
-    commands = guild.commands;
-  } else {
-    commands = client.application?.commands;
-  }
-
-  commands?.create({
-    name: "ping",
-    description: "Replies with pong.",
-  });
-});
-
-client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isCommand()) {
-    return;
-  }
-
-  const { commandName, options } = interaction;
-
-  if (commandName === "ping") {
-    interaction.reply({
-      content: `Pinging...  Your ping is ${client.ws.ping}ms.`,
-      ephemeral: true,
-    });
-  }
+  new WOKCommands(client, {
+    commandDir: path.join(__dirname, "commands"),
+    testServers: ["878243494802632724"],
+  }).setDefaultPrefix(".");
 });
 
 if (process.env.TOKEN) client.login(process.env.TOKEN);
