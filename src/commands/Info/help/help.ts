@@ -1,5 +1,5 @@
-import { Message } from "discord.js";
 import { ICommand } from "wokcommands";
+
 export default {
   callback: ({ instance }) => {
     instance.commandHandler.commands.forEach((command) => {
