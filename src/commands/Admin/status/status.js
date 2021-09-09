@@ -6,7 +6,7 @@ var setStatus = function (client, status) {
         status: "online",
         activities: [
             {
-                name: "WeriniaWare",
+                name: status,
             },
         ],
     });
@@ -16,7 +16,10 @@ exports.default = {
     description: "Updates the status for the bot",
     minArgs: 1,
     expectedArgs: "<status>",
+    hidden: true,
     ownerOnly: true,
+    slash: true,
+    testOnly: true,
     init: function (client) {
         var status = "Testing";
         setStatus(client, status);

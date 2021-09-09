@@ -6,7 +6,7 @@ const setStatus = (client: Client, status: string) => {
     status: "online",
     activities: [
       {
-        name: "WeriniaWare",
+        name: status,
       },
     ],
   });
@@ -17,7 +17,10 @@ export default {
   description: "Updates the status for the bot",
   minArgs: 1,
   expectedArgs: "<status>",
+  hidden: true,
   ownerOnly: true,
+  slash: true,
+  testOnly: true,
 
   init: (client: Client) => {
     const status = "Testing";

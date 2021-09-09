@@ -1,9 +1,13 @@
 import { ICommand } from "wokcommands";
 
 export default {
-  callback: ({ instance }) => {
+  testOnly: true,
+  callback: ({ interaction, instance }) => {
     instance.commandHandler.commands.forEach((command) => {
       console.log(command);
+    });
+    interaction.reply({
+      content: "Help has executed",
     });
   },
 } as ICommand;

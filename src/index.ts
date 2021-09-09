@@ -23,6 +23,7 @@ client.on("ready", () => {
   };
 
   const wok = new WOKCommands(client, {
+    showWarns: false,
     dbOptions,
     commandDir: path.join(__dirname, "commands"),
     featureDir: path.join(__dirname, "features"),
@@ -32,7 +33,7 @@ client.on("ready", () => {
     .setDefaultPrefix(".")
     .setMongoPath(process.env.MONGO_URI)
     .setDisplayName("WeriniaWare")
-
+    .setColor(0xff0000)
     .setCategorySettings([
       {
         name: "Fun",
@@ -54,6 +55,10 @@ client.on("ready", () => {
     ]);
   const { commandHandler } = wok;
   const { slashCommands } = wok;
+
+  wok.on("databaseConnected", (connection, state) => {
+    console.log(`The connection state is "${state}"`);
+  });
 });
 
 if (process.env.TOKEN) client.login(process.env.TOKEN);

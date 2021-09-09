@@ -45,6 +45,7 @@ client.on("ready", function () {
         useFindAndModify: true,
     };
     var wok = new wokcommands_1.default(client, {
+        showWarns: false,
         dbOptions: dbOptions,
         commandDir: path_1.default.join(__dirname, "commands"),
         featureDir: path_1.default.join(__dirname, "features"),
@@ -54,6 +55,7 @@ client.on("ready", function () {
         .setDefaultPrefix(".")
         .setMongoPath(process.env.MONGO_URI)
         .setDisplayName("WeriniaWare")
+        .setColor(0xff0000)
         .setCategorySettings([
         {
             name: "Fun",
@@ -75,6 +77,9 @@ client.on("ready", function () {
     ]);
     var commandHandler = wok.commandHandler;
     var slashCommands = wok.slashCommands;
+    wok.on("databaseConnected", function (connection, state) {
+        console.log("The connection state is \"" + state + "\"");
+    });
 });
 if (process.env.TOKEN)
     client.login(process.env.TOKEN);
