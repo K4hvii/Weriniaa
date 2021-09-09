@@ -11,14 +11,7 @@ export default {
   slash: true,
 
   callback: ({ message, args }) => {
-    const target = message.mentions.members.first();
-
-    if (target === null) {
-      message.reply({
-        content: "Please Specify target",
-      });
-      return;
-    }
+    const target = message.mentions.members?.first();
 
     if (!target) {
       message.reply({
@@ -41,13 +34,8 @@ export default {
       reason,
       days: 7,
     });
-
-    const embed = new MessageEmbed()
-      .setAuthor("Weriniaa")
-      .setColor("BLUE")
-      .setDescription(`Banned ${target}`);
     message.reply({
-      embeds: [embed],
+      content: `Banned ${target}`,
     });
   },
 } as ICommand;

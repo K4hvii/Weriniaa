@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var discord_js_1 = require("discord.js");
 exports.default = {
     category: "Admin",
     description: "Bans a user",
@@ -10,14 +9,9 @@ exports.default = {
     testOnly: true,
     slash: true,
     callback: function (_a) {
+        var _b;
         var message = _a.message, args = _a.args;
-        var target = message.mentions.members.first();
-        if (target === null) {
-            message.reply({
-                content: "Please Specify target",
-            });
-            return;
-        }
+        var target = (_b = message.mentions.members) === null || _b === void 0 ? void 0 : _b.first();
         if (!target) {
             message.reply({
                 content: "Please tag someone to ban.",
@@ -36,12 +30,8 @@ exports.default = {
             reason: reason,
             days: 7,
         });
-        var embed = new discord_js_1.MessageEmbed()
-            .setAuthor("Weriniaa")
-            .setColor("BLUE")
-            .setDescription("Banned " + target);
         message.reply({
-            embeds: [embed],
+            content: "Banned " + target,
         });
     },
 };
