@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var discord_js_1 = require("discord.js");
 exports.default = {
-    category: "Testing",
+    category: "Admin",
     ownerOnly: true,
     testOnly: true,
     description: "Sends an embed",

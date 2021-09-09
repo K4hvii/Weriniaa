@@ -2,11 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     category: "Game",
-    description: "Shows game inventory",
+    description: "Shows games help menu",
+    testOnly: true,
     callback: function (_a) {
         var message = _a.message;
         message.reply({
-            content: "Game inv.",
+            content: "Game menu",
         });
     },
 };

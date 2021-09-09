@@ -19,11 +19,11 @@ client.on("ready", () => {
     keepAlive: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: true,
+    useFindAndModify: false,
   };
 
   const wok = new WOKCommands(client, {
-    showWarns: false,
+    showWarns: true,
     dbOptions,
     commandDir: path.join(__dirname, "commands"),
     featureDir: path.join(__dirname, "features"),
@@ -36,10 +36,6 @@ client.on("ready", () => {
     .setColor(0xff0000)
     .setCategorySettings([
       {
-        name: "Fun",
-        emoji: "",
-      },
-      {
         name: "Economy",
         emoji: "💸",
       },
@@ -51,6 +47,14 @@ client.on("ready", () => {
       {
         name: "Game",
         emoji: "🎮",
+      },
+      {
+        name: "Info",
+        emoji: "❗",
+      },
+      {
+        name: "Admin",
+        emoji: "💤",
       },
     ]);
   const { commandHandler } = wok;

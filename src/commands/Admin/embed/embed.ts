@@ -2,7 +2,7 @@ import { MessageEmbed } from "discord.js";
 import { ICommand } from "wokcommands";
 
 export default {
-  category: "Testing",
+  category: "Admin",
   ownerOnly: true,
   testOnly: true,
   description: "Sends an embed",

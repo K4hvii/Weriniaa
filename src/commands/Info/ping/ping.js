@@ -30,13 +30,11 @@ var client = new discord_js_1.default.Client({
 exports.default = {
     category: "Info",
     description: "Replies with pong",
-    slash: true,
     testOnly: true,
     callback: function (_a) {
-        var interaction = _a.interaction;
-        interaction.reply({
+        var message = _a.message;
+        message.reply({
             content: "\uD83C\uDFD3Pinging... My ping is " + client.ws.ping + "ms.",
-            ephemeral: true,
         });
     },
 };

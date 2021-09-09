@@ -12,13 +12,11 @@ const client = new DiscordJS.Client({
 export default {
   category: "Info",
   description: "Replies with pong",
-  slash: true,
   testOnly: true,
 
-  callback: ({ interaction }) => {
-    interaction.reply({
+  callback: ({ message }) => {
+    message.reply({
       content: `🏓Pinging... My ping is ${client.ws.ping}ms.`,
-      ephemeral: true,
     });
   },
 } as ICommand;

@@ -42,10 +42,10 @@ client.on("ready", function () {
         keepAlive: true,
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useFindAndModify: true,
+        useFindAndModify: false,
     };
     var wok = new wokcommands_1.default(client, {
-        showWarns: false,
+        showWarns: true,
         dbOptions: dbOptions,
         commandDir: path_1.default.join(__dirname, "commands"),
         featureDir: path_1.default.join(__dirname, "features"),
@@ -58,10 +58,6 @@ client.on("ready", function () {
         .setColor(0xff0000)
         .setCategorySettings([
         {
-            name: "Fun",
-            emoji: "",
-        },
-        {
             name: "Economy",
             emoji: "💸",
         },
@@ -73,6 +69,14 @@ client.on("ready", function () {
         {
             name: "Game",
             emoji: "🎮",
+        },
+        {
+            name: "Info",
+            emoji: "❗",
+        },
+        {
+            name: "Admin",
+            emoji: "💤",
         },
     ]);
     var commandHandler = wok.commandHandler;

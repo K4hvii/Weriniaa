@@ -2,10 +2,12 @@ import { ICommand } from "wokcommands";
 
 export default {
   category: "Game",
-  description: "Shows game inventory",
+  description: "Game character forages",
+  testOnly: true,
+
   callback: ({ message }) => {
     message.reply({
-      content: "Game inv.",
+      content: "Game forage",
     });
   },
 } as ICommand;
