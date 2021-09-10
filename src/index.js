@@ -50,7 +50,9 @@ client.on("ready", function () {
         commandDir: path_1.default.join(__dirname, "commands"),
         featureDir: path_1.default.join(__dirname, "features"),
         testServers: ["878243494802632724"],
+        typeScript: true,
     })
+        .setColor("BLACK")
         .setBotOwner("453946836051558420")
         .setDefaultPrefix(".")
         .setMongoPath(process.env.MONGO_URI)
