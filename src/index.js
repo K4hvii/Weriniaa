@@ -64,7 +64,7 @@ client.on("ready", function () {
         .setColor("BLACK")
         .setBotOwner("453946836051558420")
         .setDefaultPrefix(".")
-        .setMongoPath("")
+        .setMongoPath(process.env.MONGO_URI)
         .setDisplayName("WeriniaWare")
         .setColor(0xff0000)
         .setCategorySettings([
