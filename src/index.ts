@@ -39,7 +39,6 @@ client.on("ready", () => {
     delErrMsgCooldown: -1,
     showWarns: true,
     disabledDefaultCommands: ["language"],
-    mon,
   })
     .setColor("BLACK")
     .setBotOwner("453946836051558420")
