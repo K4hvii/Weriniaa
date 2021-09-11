@@ -29,8 +29,7 @@ export default {
           value: "value three",
           inline: true,
         },
-      ])
-      .addField("name four", "value four");
+      ]);
     return embed;
   },
 } as ICommand;

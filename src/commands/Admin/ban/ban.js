@@ -7,7 +7,6 @@ exports.default = {
     minArgs: 1,
     Permissions: ["ADMINISTRATOR"],
     testOnly: true,
-    slash: true,
     callback: function (_a) {
         var _b;
         var message = _a.message, args = _a.args;

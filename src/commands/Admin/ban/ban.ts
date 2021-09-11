@@ -1,4 +1,3 @@
-import { MessageEmbed } from "discord.js";
 import { ICommand } from "wokcommands";
 
 export default {
@@ -8,7 +7,6 @@ export default {
   minArgs: 1,
   Permissions: ["ADMINISTRATOR"],
   testOnly: true,
-  slash: true,
 
   callback: ({ message, args }) => {
     const target = message.mentions.members?.first();
