@@ -46,7 +46,12 @@ client.on("ready", function () {
     };
     var wok = new wokcommands_1.default(client, {
         showWarns: true,
-        dbOptions: dbOptions,
+        dbOptions: {
+            keepAlive: true,
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useFindAndModify: false,
+        },
         commandDir: path_1.default.join(__dirname, "commands"),
         featureDir: path_1.default.join(__dirname, "features"),
         testServers: ["878243494802632724"],

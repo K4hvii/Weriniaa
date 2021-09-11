@@ -24,7 +24,12 @@ client.on("ready", () => {
 
   const wok = new WOKCommands(client, {
     showWarns: true,
-    dbOptions,
+    dbOptions: {
+      keepAlive: true,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+    },
     commandDir: path.join(__dirname, "commands"),
     featureDir: path.join(__dirname, "features"),
     testServers: ["878243494802632724"],
