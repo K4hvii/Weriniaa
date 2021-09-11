@@ -21,7 +21,6 @@ client.on("ready", () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
-    mongoUri: process.env.MONGO_URI,
   };
 
   const wok = new WOKCommands(client, {

@@ -43,7 +43,6 @@ client.on("ready", function () {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
-        mongoUri: process.env.MONGO_URI,
     };
     var wok = new wokcommands_1.default(client, {
         dbOptions: {
