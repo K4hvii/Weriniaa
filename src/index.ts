@@ -2,6 +2,7 @@ import DiscordJS, { Intents } from "discord.js";
 import dotenv from "dotenv";
 import WOKCommands from "wokcommands";
 import path from "path";
+import { getMongoConnection } from "wokcommands/src/mongo";
 dotenv.config();
 
 const client = new DiscordJS.Client({
@@ -20,10 +21,10 @@ client.on("ready", () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
+    mongoUri: process.env.MONGO_URI,
   };
 
   const wok = new WOKCommands(client, {
-    showWarns: true,
     dbOptions: {
       keepAlive: true,
       useNewUrlParser: true,
@@ -34,11 +35,16 @@ client.on("ready", () => {
     featureDir: path.join(__dirname, "features"),
     testServers: ["878243494802632724"],
     typeScript: true,
+    ignoreBots: true,
+    delErrMsgCooldown: -1,
+    showWarns: true,
+    disabledDefaultCommands: ["language"],
+    mon,
   })
     .setColor("BLACK")
     .setBotOwner("453946836051558420")
     .setDefaultPrefix(".")
-    .setMongoPath(process.env.MONGO_URI)
+    .setMongoPath("")
     .setDisplayName("WeriniaWare")
     .setColor(0xff0000)
     .setCategorySettings([
@@ -64,6 +70,7 @@ client.on("ready", () => {
         emoji: "💤",
       },
     ]);
+
   const { commandHandler } = wok;
   const { slashCommands } = wok;
 

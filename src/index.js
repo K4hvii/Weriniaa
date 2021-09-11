@@ -43,9 +43,9 @@ client.on("ready", function () {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
+        mongoUri: process.env.MONGO_URI,
     };
     var wok = new wokcommands_1.default(client, {
-        showWarns: true,
         dbOptions: {
             keepAlive: true,
             useNewUrlParser: true,
@@ -56,11 +56,16 @@ client.on("ready", function () {
         featureDir: path_1.default.join(__dirname, "features"),
         testServers: ["878243494802632724"],
         typeScript: true,
+        ignoreBots: true,
+        delErrMsgCooldown: -1,
+        showWarns: true,
+        disabledDefaultCommands: ["language"],
+        mon: mon,
     })
         .setColor("BLACK")
         .setBotOwner("453946836051558420")
         .setDefaultPrefix(".")
-        .setMongoPath(process.env.MONGO_URI)
+        .setMongoPath("")
         .setDisplayName("WeriniaWare")
         .setColor(0xff0000)
         .setCategorySettings([
