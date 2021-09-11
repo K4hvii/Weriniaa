@@ -56,7 +56,7 @@ client.on("ready", function () {
         testServers: ["878243494802632724"],
         typeScript: true,
         ignoreBots: true,
-        delErrMsgCooldown: -1,
+        delErrMsgCooldown: 10,
         showWarns: true,
         disabledDefaultCommands: ["language"],
     })
